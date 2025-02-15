@@ -273,7 +273,7 @@ class DZSMWeaponDumpEntry : DZSMBaseDumpEntry
 		"A2HKM5_SD"
 	};
 
-	bool skipRecoil = true;
+	//bool skipRecoil = true;
 
 	float noise;
 	float magazineSwitchTime;
@@ -357,8 +357,8 @@ class DZSMWeaponDumpEntry : DZSMBaseDumpEntry
 			GetGame().ConfigGetFloatArray( "cfgWeapons " + classname + " OpticsInfo discreteDistance", opticsDiscreteDistance );
 		}
 
-		//if (!CheckItemCrash(classname))
-		if(!skipRecoil)
+		if (!CheckItemCrash(classname))
+		//if(!skipRecoil)
 		{
 			Print("DZSM Dump ~ Determining recoil for " + classname);
 			Weapon_Base ent;
@@ -404,7 +404,7 @@ class DZSMWeaponDumpEntry : DZSMBaseDumpEntry
 	{
 		for (int i = 0; i < m_ItemsThatCrash.Count(); i++)
 		{
-			if ( m_ItemsThatCrash[i] == name )
+			if ( m_ItemsThatCrash[i].ToLower() == name.ToLower() )
 			{
 				return true;
 			}
