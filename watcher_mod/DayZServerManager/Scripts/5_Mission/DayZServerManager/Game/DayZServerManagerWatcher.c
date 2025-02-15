@@ -270,7 +270,8 @@ class DZSMWeaponDumpEntry : DZSMBaseDumpEntry
 		"m203_base",
 		"m203_standalone",
 		"archery_base",
-		"A2HKM5_SD"
+		"A2HKM5_SD",
+		"CrossbowRecoil"
 	};
 
 	//bool skipRecoil = true;
