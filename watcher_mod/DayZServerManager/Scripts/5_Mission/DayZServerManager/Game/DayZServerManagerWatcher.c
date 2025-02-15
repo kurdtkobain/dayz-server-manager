@@ -272,7 +272,9 @@ class DZSMWeaponDumpEntry : DZSMBaseDumpEntry
 		"archery_base",
 		"A2HKM5_SD"
 	};
-	
+
+	bool skipRecoil = true;
+
 	float noise;
 	float magazineSwitchTime;
 	float initSpeedMultiplier;
@@ -324,7 +326,7 @@ class DZSMWeaponDumpEntry : DZSMBaseDumpEntry
 		barrels = muzzles.Count();
 		delete muzzles;
 		
-        color = GetGame().ConfigGetTextOut( "cfgWeapons " + classname + " color" );
+        	color = GetGame().ConfigGetTextOut( "cfgWeapons " + classname + " color" );
 		
 		modes = new array<ref DZSMWeaponModeDumpEntry>;
 		
@@ -355,7 +357,8 @@ class DZSMWeaponDumpEntry : DZSMBaseDumpEntry
 			GetGame().ConfigGetFloatArray( "cfgWeapons " + classname + " OpticsInfo discreteDistance", opticsDiscreteDistance );
 		}
 
-		if (!CheckItemCrash(classname))
+		//if (!CheckItemCrash(classname))
+		if(!skipRecoil)
 		{
 			Print("DZSM Dump ~ Determining recoil for " + classname);
 			Weapon_Base ent;
