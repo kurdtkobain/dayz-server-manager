@@ -46,7 +46,7 @@ jobs:
       run: powershell Compress-Archive -Path 'build/*' -DestinationPath 'server-manager.zip'
     
     - name: Archive build artifacts (windows)
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: server-manager-windows
         path: ./server-manager.zip
@@ -94,7 +94,7 @@ jobs:
       run: powershell Compress-Archive -Path 'build/*' -DestinationPath 'server-manager.zip'
     
     - name: Archive build artifacts (windows)
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: server-manager-windows-debug
         path: ./server-manager.zip
@@ -200,7 +200,7 @@ jobs:
     - name: Zip Artifacts (ubuntu latest)
       run: zip -r server-manager.zip build/*
     - name: Archive build artifacts (ubuntu latest)
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: server-manager-ubuntu-latest
         path: ./server-manager.zip
@@ -219,7 +219,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Download artifacts (ubuntu latest)
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: server-manager-ubuntu-latest
     
@@ -314,7 +314,7 @@ jobs:
         prerelease: false
 
     - name: Download artifacts (windows)
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: server-manager-windows
 
@@ -334,7 +334,7 @@ jobs:
         asset_content_type: application/zip
     
     - name: Download artifacts (windows debug)
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: server-manager-windows-debug
 
@@ -354,7 +354,7 @@ jobs:
         asset_content_type: application/zip
 
     - name: Download artifacts (ubuntu 18)
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: server-manager-ubuntu-18
 
@@ -374,7 +374,7 @@ jobs:
         asset_content_type: application/zip 
 
     - name: Download artifacts (ubuntu latest)
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: server-manager-ubuntu-latest
 
